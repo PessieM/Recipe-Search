@@ -3,12 +3,31 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import { HashRouter, Routes, Route } from "react-router-dom";
+//import page components-may need to change!
+import Home from "./Home";
+import About from "./About";
+import About from "./Details";
+import Navbar from "./Navbar";  // Import the Navbar component
+
 function App() {
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
+      <HashRouter>
+      <Navbar /> {/* Include the Navbar at the top */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/details" element={<Details />} />
+      </Routes>
+    </HashRouter>
+    </>
+
+        );
+      }
+      /* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -28,8 +47,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
-  )
-}
+     */
+
 
 export default App
