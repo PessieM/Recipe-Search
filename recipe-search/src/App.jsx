@@ -9,6 +9,7 @@ import Home from "./Home";
 import About from "./About";
 import About from "./Details";
 import Navbar from "./Navbar";  // Import the Navbar component
+import Footer from "./Footer";
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -16,12 +17,17 @@ function App() {
   return (
     <>
       <HashRouter>
-      <Navbar /> {/* Include the Navbar at the top */}
+      <Navbar /> {/* Navbar at the top */}
+      
+      <div className="content">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/details" element={<Details />} />
       </Routes>
+      </div>
+
+      <Footer /> {/* Footer appears at the bottom */}
     </HashRouter>
     </>
 
